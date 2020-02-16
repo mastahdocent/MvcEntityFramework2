@@ -1,0 +1,22 @@
+﻿@model List<PostModel>
+
+@Html.ActionLink("dodaj nowy", "Add")
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Tytuł</td>
+        <td>Akcje</td>
+    </tr>
+    @foreach (var post in Model)
+    {
+        <tr>
+            <td>@post.ID</td>
+            <td>@post.Title</td>
+            <td>
+                @Html.ActionLink("usuń", "Remove", "Home", new { post.ID })
+                @Html.ActionLink("edytuj", "Edit", "Home", new { post.ID })
+            </td>
+        </tr>
+    }
+</table>

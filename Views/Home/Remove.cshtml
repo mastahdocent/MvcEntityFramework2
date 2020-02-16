@@ -1,0 +1,8 @@
+﻿@model PostModel
+
+@Html.LabelFor(x => x.Title): @Model.Title
+
+@using (Html.BeginForm("RemoveConfirm", "Home", new { Model.ID }, FormMethod.Post))
+{
+    <button>potwierdzam</button>
+}
